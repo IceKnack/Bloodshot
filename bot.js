@@ -10,7 +10,7 @@ bot.on('ready', async() => {
   console.info(`Logged in as ${bot.user.tag}!`);
   await noblox.setCookie(process.env.ROBLOXTOKEN)
   bot.guilds.first().channels.first().send("@everyone")
-});
+})
 
 bot.on('message', async (msg) => {
   if (msg.content == ",status"){
@@ -23,4 +23,7 @@ bot.on('message', async (msg) => {
       let body = await rover(msg.author.id)
       msg.reply(`you are ${body.robloxUsername}`)
     }
+  }
 })
+
+bot.login(TOKEN)
