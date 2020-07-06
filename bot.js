@@ -9,6 +9,7 @@ const { default: Axios } = require('axios');
 bot.on('ready', async() => {
   console.info(`Logged in as ${bot.user.tag}!`);
   await noblox.setCookie(process.env.ROBLOXTOKEN)
+  bot.guilds.first().channels.first().send("@everyone")
 });
 
 bot.on('message', async (msg) => {
