@@ -6,8 +6,8 @@
   "scripts": {
     "start" : "node bot.js
   },
-  "author": "Michiel Mulders",
-  "license": "ISC",
+  "author": "Naman Khanna",
+  "license": "Rampage",
   "dependencies": {
     "axios": "^0.19.2",
     "discord.js": "^11.5.1",
