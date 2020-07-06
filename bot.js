@@ -1,7 +1,7 @@
 require('dotenv').config();
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const TOKEN = process.env.TOKEN;
+const TOKEN = "NzI5NTg1MzYxNzcyMzQ3NDMy.XwLFXg._pEqasuKwZOuZDmNAZntVT6yBL0";
 const rover = require('rover-api');
 const noblox = require('noblox.js')
 const { default: Axios } = require('axios');
