@@ -20,7 +20,7 @@ bot.on('message', async (msg) => {
     } else if(command.includes("ban")){
       if (msg.member.roles.find()){
         let userid = command.slice(4)
-        let player = await noblox.getUsernameFromId(2470023)
+        let player = await noblox.getUsernameFromId(userid)
         if (player){
           msg.channel.send(`Attempting to ban ${player}/${userid}`)
         } else {
