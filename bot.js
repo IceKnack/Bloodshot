@@ -19,8 +19,9 @@ bot.on('message', async (msg) => {
       msg.channel.send(`Success! Logged in as ${bot.user.tag}`)
     } else if(command.includes("setprefix")){
       let mprefix = command.split("!setprefix ")
-      if (mprefix & mprefix != ""){
-        prefix = mprefix
+      if (mprefix[2] & mprefix[2] != ""){
+        prefix = mprefix[2]
+        msg.reply(`Prefix is now ${prefix}`)
       }
     }
   }
