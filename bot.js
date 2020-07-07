@@ -17,7 +17,7 @@ bot.on('message', async (msg) => {
     let command = msg.content.slice(1)
     if (command.includes("status")){
       msg.channel.send(`Success! Logged in as ${bot.user.tag}`)
-    } else if(command.includes("ban")){
+    } else if (command.includes("ban")){
       if (msg.member.roles.find(`729862364194799658`)){
         let userid = command.slice(4)
         msg.channel.send(`Finding player by userid ${userid}`)
@@ -27,6 +27,8 @@ bot.on('message', async (msg) => {
         } else {
           msg.channel.send(`${userid} does not exist on Roblox`)
         }
+      } else {
+        msg.reply("you're not authorized")
       }
     }
   }
