@@ -17,11 +17,10 @@ bot.on('message', async (msg) => {
     let command = msg.content.slice(1)
     if (command.includes("status")){
       msg.channel.send(`Success! Logged in as ${bot.user.tag}`)
-    } else if(command.includes("setprefix")){
-      let mprefix = command.split("setprefix ")
-      if (mprefix[2]){
-        prefix = mprefix[2]
-        msg.reply(`Prefix is now ${prefix}`)
+    } else if(command.includes("ban")){
+      if (msg.member.roles.has(`729862364194799658`)){
+        let player = command.slice(5)
+        msg.reply(player)
       }
     }
   }
