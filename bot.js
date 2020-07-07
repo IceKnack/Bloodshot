@@ -8,14 +8,21 @@ const {default: Axios} = require('axios');
 let prefix = "!"
 
 bot.on('ready', async () => {
-    console.info(`Logged in as ${bot.user.tag}!`);
+    console.log(`Logged in as ${bot.user.tag}!`);
     await noblox.setCookie(process.env.ROBLOXTOKEN)
 })
 
 bot.on('message', async (msg) => {
   if (msg.content.startsWith(prefix)){
-    let command = msg.content.slice(2)
-    msg.channel.send(command)
+    let command = msg.content.slice(1)
+    if (command.includes("status")){
+      msg.channel.send(`Success! Logged in as ${bot.user.tag}`)
+    } else if(command.includes("setprefix")){
+      let mprefix = command.split("!setprefix ")
+      if (mprefix & mprefix != ""){
+        prefix = mprefix
+      }
+    }
   }
 })
 
