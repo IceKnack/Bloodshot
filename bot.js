@@ -18,9 +18,14 @@ bot.on('message', async (msg) => {
     if (command.includes("status")){
       msg.channel.send(`Success! Logged in as ${bot.user.tag}`)
     } else if(command.includes("ban")){
-      if (msg.member.roles.has(`729862364194799658`)){
-        let player = command.slice(5)
-        msg.reply(player)
+      if (msg.member.roles.find()){
+        let userid = command.slice(4)
+        let player = await noblox.getUsernameFromId(2470023)
+        if (player){
+          msg.channel.send(`Attempting to ban ${player}/${userid}`)
+        } else {
+          msg.channel.send(`${userid} does not exist on Roblox`)
+        }
       }
     }
   }
