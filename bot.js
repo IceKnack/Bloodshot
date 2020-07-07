@@ -18,10 +18,8 @@ bot.on('message', async (msg) => {
     if (command.includes("status")){
       msg.channel.send(`Success! Logged in as ${bot.user.tag}`)
     } else if (command.includes("ban")){
-      msg.reply("e")
-      if (msg.member.roles.find(`729862364194799658`)){
+      if (msg.member.roles.has(`729862364194799658`)){
         let userid = command.slice(4)
-        msg.channel.send(`Finding player by userid ${userid}`)
         let player = await noblox.getUsernameFromId(userid)
         if (player){
           msg.channel.send(`Attempting to ban ${player}/${userid}`)
